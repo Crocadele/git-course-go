@@ -1,68 +1,50 @@
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
-func print(c chan string){
+func print(c chan string) {
 
-    for i := 0; i < 10;i++{
+	for i := 0; i < 10; i++ {
 
-        c <- "ping"
-    }
-
-}
-
-func print1(c chan string){
-
-    for i := 0;i < 10;i++ {
-
-        c <- "pong" 
-        time.Sleep(time.Second * 3)
-       
+		c <- "ping"
+	}
 
 }
 
-}
+func print1(c chan string) {
 
-func printLn(c chan string){
+	for i := 0; i < 10; i++ {
 
-    for i := 0;i < 10;i++ {
+		c <- "pong"
+		time.Sleep(time.Second * 3)
 
-    msg := <- c
-
-    fmt.Println(msg)
-    time.Sleep(time.Second * 1)
-}
+	}
 
 }
 
+func printLn(c chan string) {
+
+	for i := 0; i < 10; i++ {
+
+		msg := <-c
+
+		fmt.Println(msg)
+		time.Sleep(time.Second * 1)
+	}
+
+}
 
 func main() {
-    c := make(chan string)
+	c := make(chan string)
 
-    go print(c)
-    go print1(c)
-    go printLn(c)
+	go print(c)
+	go print1(c)
+	go printLn(c)
 
-    var input string
-    fmt.Scanln(&input)
+	var inputLn string
+	fmt.Scanln(&inputLn)
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
