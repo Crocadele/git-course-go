@@ -13,15 +13,19 @@ func main() {
 	)
 
 	firstPrice := applePrice*appleCount + pearPrice*pearCount
-	fmt.Println("Гроші які потрібно витратити, щоб купити 9 яблук та 8 груш:", firstPrice)
+	fmt.Println("Скільки грошей треба витратити, щоб купити 9 яблук та 8 груш?\n", firstPrice)
 
 	pearMaxCount := float64(amount) / pearPrice
-	fmt.Println("Кількість груш що ми можемо купити: ", int(pearMaxCount))
+	fmt.Println("Скільки груш ми можемо купити?\n", int(pearMaxCount))
 
 	appleMaxCount := float64(amount) / applePrice
-	fmt.Println("Кількість яблук що ми можемо купити: ", int(appleMaxCount))
+	fmt.Println("Скільки яблук ми можемо купити?\n", int(appleMaxCount))
 
 	checkPrice := 2.0*applePrice + 2.0*pearPrice
-	fmt.Println("Ми не можемо купити 2 груші та 2 яблука, так як сума грошей щонам потрібна стоновить:", checkPrice)
 
+	if int(checkPrice) <= amount {
+		fmt.Println("Чи ми можемо купити 2 груші та 2 яблука?\nТак")
+	} else {
+		fmt.Println("Чи ми можемо купити 2 груші та 2 яблука?\nНі")
+	}
 }
