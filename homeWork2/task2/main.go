@@ -6,16 +6,9 @@ import (
 
 func main() {
 
-	//var max, min int32
 	input := "1 3 45 64 34 -45 1 1 -45"
-
 	arrOfStrings := make([]string, 0)
-	var (
-		checkElement  string
-		resultElement string
-		max           string
-		min           string
-	)
+	var checkElement, resultElement, max, min string
 
 	i := 0
 	for i < len(input) {
@@ -58,8 +51,4 @@ func main() {
 	} else {
 		fmt.Println(max + " " + min)
 	}
-
-	//fmt.Println(string(max), string(min))
-	//fmt.Println(arrOfStrings)
-
 }
