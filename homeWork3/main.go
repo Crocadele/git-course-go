@@ -99,7 +99,6 @@ func getAllFeed(farm []WeightFeedCalculater) int {
 		sum += animal.CalculateWeightFeed()
 		fmt.Printf("Animal name: %s\nAnimal weight: %d\nAnimal feed: %d\n", animal.GetName(), animal.GetWeight(), animal.CalculateWeightFeed())
 	}
-
 	return sum
 
 }
