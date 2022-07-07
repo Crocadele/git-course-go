@@ -9,43 +9,39 @@ type WeightFeedCalculater interface {
 }
 
 type Dog struct {
-	weight          int
-	feedPerKilogram int
-	amount          int
-	name            string
+	weight int
 }
 
 type Cat struct {
-	weight          int
-	feedPerKilogram int
-	amount          int
-	name            string
+	weight int
 }
 
 type Cow struct {
-	weight          int
-	feedPerKilogram int
-	amount          int
-	name            string
+	weight int
 }
 
 func (d Dog) CalculateWeightFeed() int {
-	return d.feedPerKilogram * d.weight * d.amount
+	const feedPerKilogram = 2
+	return feedPerKilogram * d.weight
 }
 
 func (d Dog) GetName() string {
-	return d.name
+	const animalName = "Dog"
+	return animalName
 }
 func (d Dog) GetWeight() int {
 	return d.weight
 }
 
 func (c Cat) CalculateWeightFeed() int {
-	return c.feedPerKilogram * c.weight * c.amount
+	const feedPerKilogram = 7
+	return feedPerKilogram * c.weight
 }
 
 func (c Cat) GetName() string {
-	return c.name
+	const animalName = "Cat"
+
+	return animalName
 }
 
 func (c Cat) GetWeight() int {
@@ -53,11 +49,13 @@ func (c Cat) GetWeight() int {
 }
 
 func (cw Cow) CalculateWeightFeed() int {
-	return cw.feedPerKilogram * cw.weight * cw.amount
+	const feedPerKilogram = 25
+	return feedPerKilogram * cw.weight
 }
 
 func (cw Cow) GetName() string {
-	return cw.name
+	const animalName = "Cow"
+	return animalName
 }
 
 func (cw Cow) GetWeight() int {
@@ -68,22 +66,13 @@ func main() {
 
 	arr := []WeightFeedCalculater{
 		Cow{
-			weight:          100,
-			feedPerKilogram: 25,
-			amount:          1,
-			name:            "Cow",
+			weight: 100,
 		},
 		Dog{
-			weight:          24,
-			feedPerKilogram: 2,
-			amount:          1,
-			name:            "Dog",
+			weight: 24,
 		},
 		Cat{
-			weight:          10,
-			feedPerKilogram: 7,
-			amount:          1,
-			name:            "Cat",
+			weight: 10,
 		},
 	}
 
